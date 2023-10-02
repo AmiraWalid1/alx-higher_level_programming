@@ -7,15 +7,22 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *curr;
+	listint_t *curr, *test;
+	int idx = 0, i;
 
 	curr = list;
 	while (curr)
 	{
+		idx++;
 		curr = curr->next;
-		if (curr == list)
+		test = list;
+		for (i = 0 ; i < idx ; i++)
 		{
-			return (1);
+			if (curr == test)
+			{
+				return (1);
+			}
+			test = test->next;
 		}
 	}
 	return (0);
