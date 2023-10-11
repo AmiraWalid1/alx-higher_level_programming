@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     for lst in matrix:
-        for item in lst:
-            print("{:d}".format(item), end=(" " if lst[-1] != item else "\n"))
+        for i in range(len(lst)):
+            print("{:d}".format(lst[i]),
+                  end=(" " if i != len(lst) - 1 else "\n"))
