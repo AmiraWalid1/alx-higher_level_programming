@@ -18,7 +18,7 @@ def main():
     elif sys.argv[2] == '/':
         print('{} / {} = {}'.format(a, b, div(a, b)))
     else:
-        print(" Unknown operator. Available operators: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
 
