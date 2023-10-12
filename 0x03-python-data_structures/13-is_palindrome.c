@@ -29,28 +29,34 @@ listint_t *addNodeToBegin(listint_t **head, int n)
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *h_temp = NULL, *curr, *curr_temp;
+	listint_t *curr;
+	int *arr, len = 0, i = 0;
 
 	if (!head)
 		return (0);
 	curr = *head;
 	while (curr)
 	{
-		addNodeToBegin(&h_temp, curr->n);
+		len++;
 		curr = curr->next;
 	}
+	arr = malloc(sizeof(int) * len);
+	if (!arr)
+		return (0);
 	curr = *head;
-	curr_temp = h_temp;
-	while (curr && curr_temp)
+	while (curr)
 	{
-		if (curr->n != curr_temp->n)
+		arr[i++] = curr->n;
+		curr = curr->next;
+	}
+	for (i = 0 ; i < len / 2 ; i++)
+	{
+		if (arr[i] != arr[len - i - 1])
 		{
-			free_listint(h_temp);
+			free(arr);
 			return (0);
 		}
-		curr = curr->next;
-		curr_temp = curr_temp->next;
 	}
-	free_listint(h_temp);
+	free(arr);
 	return (1);
 }
