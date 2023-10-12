@@ -39,6 +39,7 @@ int is_palindrome(listint_t **head)
 		addNodeToBegin(&h_temp, curr->n);
 		curr = curr->next;
 	}
+	curr = *head;
 	curr_temp = h_temp;
 	while (curr && curr_temp)
 	{
