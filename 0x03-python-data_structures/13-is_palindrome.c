@@ -46,8 +46,9 @@ int is_palindrome(listint_t **head)
 	curr = *head;
 	while (curr)
 	{
-		arr[i++] = curr->n;
+		arr[i] = curr->n;
 		curr = curr->next;
+		i++;
 	}
 	for (i = 0 ; i < len / 2 ; i++)
 	{
