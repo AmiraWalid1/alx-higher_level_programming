@@ -24,19 +24,37 @@ class Square:
         return (self.__size ** 2)
 
     def __eq__(self, other) -> bool:
-        return self.area() == other.area()
+        if isinstance(other, Square):
+            return self.area() == other.area()
+        else:
+            return False
 
     def __ne__(self, other) -> bool:
-        return self.area() != other.area()
+        if isinstance(other, Square):
+            return self.area() != other.area()
+        else:
+            return False
 
     def __lt__(self, other) -> bool:
-        return self.area() < other.area()
+        if isinstance(other, Square):
+            return self.area() < other.area()
+        else:
+            return False
 
     def __gt__(self, other) -> bool:
-        return self.area() > other.area()
+        if isinstance(other, Square):
+            return self.area() > other.area()
+        else:
+            return False
 
     def __le__(self, other) -> bool:
-        return self.area() <= other.area()
+        if isinstance(other, Square):
+            return self.area() <= other.area()
+        else:
+            return False
 
     def __ge__(self, other) -> bool:
-        return self.area() >= other.area()
+        if isinstance(other, Square):
+            return self.area() >= other.area()
+        else:
+            return False
