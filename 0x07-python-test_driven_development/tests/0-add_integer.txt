@@ -1,0 +1,85 @@
+The ``0-add_integer`` module
+===============================
+
+Using ``0-add_integer``
+--------------------------
+
+Import module:
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Basic test with integer:
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(1, -2)
+    -1
+    >>> add_integer(-1, 2)
+    1
+    >>> add_integer(-1, -2)
+    -3
+
+Test with float:
+    >>> add_integer(1.2, 2.6)
+    3
+    >>> add_integer(1.4, -2.7)
+    -1
+    >>> add_integer(-1.6, 2.9)
+    1
+    >>> add_integer(-1.8, -2.4)
+    -3
+    >>> add_integer(1)
+    99
+    >>> add_integer(1.7)
+    99
+
+Test raise error:
+    >>> add_integer("hi")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(1.2, "amira")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer("amira", 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer("hi", "amira")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer([1, 2], 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer((1,2), "amira")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(2, {1, 2})
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(2, {1:"first"})
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+
+Test passed Exception:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
