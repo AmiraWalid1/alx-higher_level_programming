@@ -1,0 +1,48 @@
+The ``5-text_indentation`` module
+==============================
+
+Using ``5-text_indentation``
+----------------------------
+
+Import module:
+    >>> module = __import__("5-text_indentation")
+    >>> text_indentation = module.text_indentation
+
+check docstring is not empty:
+    >>> len(module.__doc__) > 1
+    True
+    >>> len(text_indentation.__doc__) > 1
+    True
+
+Check correct cases:
+    >>> text_indentation("hi : amira ? bay . besty")
+    hi :
+    <BLANKLINE>
+    amira ?
+    <BLANKLINE>
+    bay .
+    <BLANKLINE>
+
+Check exception rasing:
+    >>> text_indentation(34234)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["hi : amira ? bay . besty"])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test Exception (not raising):
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    

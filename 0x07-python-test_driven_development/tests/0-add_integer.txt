@@ -5,7 +5,14 @@ Using ``0-add_integer``
 --------------------------
 
 Import module:
-    >>> add_integer = __import__("0-add_integer").add_integer
+    >>> module = __import__("0-add_integer")
+    >>> add_integer = module.add_integer
+
+Check docstring is not empty:
+    >>> len(module.__doc__) > 1
+    True
+    >>> len(add_integer.__doc__) > 1
+    True
 
 Basic test with integer:
     >>> add_integer(1, 2)
@@ -62,6 +69,11 @@ Test raise error:
     ...
     TypeError: a must be an integer
 
+    >>> add_integer(None, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
     >>> add_integer((1,2), "amira")
     Traceback (most recent call last):
     ...
@@ -77,8 +89,13 @@ Test raise error:
     ...
     TypeError: b must be an integer
 
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
 
-Test passed Exception:
+
+Test Exception (not raising):
     >>> add_integer()
     Traceback (most recent call last):
     ...
