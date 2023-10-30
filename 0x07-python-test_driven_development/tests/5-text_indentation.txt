@@ -33,12 +33,13 @@ Check exception rasing:
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
-
+  
+Check None:
     >>> text_indentation(None)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
-
+    
 Test Exception (not raising):
     >>> text_indentation()
     Traceback (most recent call last):

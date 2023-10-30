@@ -43,12 +43,7 @@ Test raise error:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
+    
     >>> add_integer(1.2, "amira")
     Traceback (most recent call last):
     ...
@@ -69,11 +64,6 @@ Test raise error:
     ...
     TypeError: a must be an integer
 
-    >>> add_integer(None, 4)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
     >>> add_integer((1,2), "amira")
     Traceback (most recent call last):
     ...
@@ -89,11 +79,21 @@ Test raise error:
     ...
     TypeError: b must be an integer
 
+Test None:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
     >>> add_integer(2, None)
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
-
 
 Test Exception (not raising):
     >>> add_integer()

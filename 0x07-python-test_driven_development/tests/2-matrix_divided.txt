@@ -76,24 +76,26 @@ Check rasing exception:
     ...     [1, 3, 2],
     ...     [4, 5, 6]
     ... ]
-    >>> print(matrix_divided(matrix, None))
-    Traceback (most recent call last):
-    ...
-    TypeError: div must be a number
-
-    >>> matrix = [
-    ...     [1, 3, 2],
-    ...     [4, 5, 6]
-    ... ]
     >>> print(matrix_divided(matrix, 0))
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
 
+   
+Check None:
     >>> print(matrix_divided(None, 2))
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+    
+    >>> matrix = [
+    ...     [1, 3, 2],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
 
 Test Exception (not raising):
     >>> print(matrix_divided(, 2))
