@@ -22,6 +22,10 @@ Check correct cases:
     <BLANKLINE>
     bay .
     <BLANKLINE>
+    besty
+
+    >>> text_indentation("hi amira")
+    hi amira
 
 Check exception rasing:
     >>> text_indentation(34234)

@@ -16,3 +16,5 @@ def text_indentation(text):
         if ch in special_chars:
             print(line.strip(), end="\n\n")
             line = ""
+    if line:
+        print(line.strip())

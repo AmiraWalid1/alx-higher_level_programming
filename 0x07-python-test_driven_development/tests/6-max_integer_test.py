@@ -20,6 +20,11 @@ class My_test_calss(unittest.TestCase):
         """chek when list is empty"""
         self.assertEqual(max_integer([]), None)
 
+    def test_one_element(self):
+        """one posistive & negative element"""
+        self.assertEqual(max_integer([5]), 5)
+        self.assertEqual(max_integer([-5]), -5)
+
     def test_max_at_begin(self):
         """test max at begin"""
         self.assertEqual(max_integer([5, 3, 1]), 5)
@@ -31,6 +36,12 @@ class My_test_calss(unittest.TestCase):
     def test_max_at_end(self):
         """test max at end"""
         self.assertEqual(max_integer([5, 9, 10, 3, 1, 100]), 100)
+
+    def test_max_at_end(self):
+        """test negative numbers"""
+        self.assertEqual(max_integer([-2, -4, -9, -5]), -2)
+        self.assertEqual(max_integer([-2, -4, -1, -9, -5]), -1)
+        self.assertEqual(max_integer([-2, -4, -9, -5, -1]), -1)
 
 
 if __name__ == "__main__":
