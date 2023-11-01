@@ -1,0 +1,2 @@
+262
+This is because Python preallocates a block of memory for small integers, which are integers between -5 and 256.
