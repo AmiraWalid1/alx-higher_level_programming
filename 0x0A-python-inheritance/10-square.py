@@ -2,8 +2,7 @@
 '''Thois module contain:
 Square class - inherits from Rectangle.
 '''
-import importlib
-Rectangle = importlib.import_module("9-rectangle").Rectangle
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
