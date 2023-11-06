@@ -3,16 +3,20 @@
 
 
 class BaseGeometry:
-    ''' define class '''
+    ''' BaseGeometry class'''
     def __init__(self):
-        '''define init function'''
+        '''empty init function'''
         pass
 
     def area(self):
-        '''define function area'''
+        '''
+        function that raises an Exception with the message
+        "area() is not implemented"
+        '''
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        '''function that that validates value'''
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         elif value <= 0:

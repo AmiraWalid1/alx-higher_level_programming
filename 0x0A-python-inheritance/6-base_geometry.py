@@ -1,13 +1,19 @@
 #!/usr/bin/python3
-'''This module contain BaseGeometry class'''
+'''
+This module contain:
+  BaseGeometry class
+'''
 
 
 class BaseGeometry:
-    ''' define class '''
+    ''' BaseGeometry class'''
     def __init__(self):
-        '''define init function'''
+        '''empty init function'''
         pass
 
     def area(self):
-        '''define function area'''
+        '''
+        function that raises an Exception with the message
+        "area() is not implemented"
+        '''
         raise Exception("area() is not implemented")

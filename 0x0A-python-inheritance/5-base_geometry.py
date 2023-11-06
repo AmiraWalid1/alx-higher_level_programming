@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-'''This module contain BaseGeometry class'''
+'''
+This module contain the following:
+BaseGeometry class -empty class
+'''
 
 
 class BaseGeometry:
-    ''' define class '''
+    ''' empty class '''
     pass
