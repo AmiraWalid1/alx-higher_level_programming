@@ -13,8 +13,8 @@ def append_after(filename="", search_string="", new_string=""):
 
     # Modify in Data readed
     for i in range(len(data)):
-        if search_string in data[i]:
-            data.insert(i+1, new_string)
+        for j in range(data[i].count(search_string)):
+            data.insert(i+j+1, new_string)
 
     # update Data in file
     with open(filename, 'w') as f:
