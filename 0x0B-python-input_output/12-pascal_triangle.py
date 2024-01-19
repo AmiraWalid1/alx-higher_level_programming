@@ -7,8 +7,11 @@ def pascal_triangle(n):
     function that returns a list of lists of integers representing
     the Pascal’s triangle of n
     '''
+    if n <= 0:
+        return []
+
     My_list = []
-    for i in range(5):
+    for i in range(n):
         # First element = 1
         sublist = [1]
 
