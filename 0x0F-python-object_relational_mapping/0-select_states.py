@@ -11,9 +11,10 @@ if __name__ == "__main__":
         password=sys.argv[2],
         database=sys.argv[3]
     )
-
     mycursor = mydb.cursor()
     mycursor.execute("SELECT * FROM states ORDER BY states.id")
-
-    for record in mycursor:
+    states = mycursor.fetchall()
+    for record in states:
         print(record)
+    mycursor.close()
+    mydb.close()
