@@ -11,7 +11,12 @@ if __name__ == "__main__":
         database=sys.argv[3]
     )
     mycursor = mydb.cursor()
-    query = """SELECT * FROM cities ORDER BY id"""
+    query = """
+            SELECT cities.id, cities.name, states.name
+            FROM cities LEFT JOIN states
+            ON cities.state_id = states.id
+            ORDER BY cities.id;
+            """
     mycursor.execute(query)
     cities = mycursor.fetchall()
     for city in cities:
