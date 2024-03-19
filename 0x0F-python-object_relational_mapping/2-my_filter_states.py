@@ -16,7 +16,7 @@ if __name__ == "__main__":
     mycursor.execute(
                     """
                     SELECT * FROM states
-                    WHERE name = '{}'
+                    WHERE name LIKE BINARY '{}'
                     ORDER BY id
                     """.format(sys.argv[4])
                     )
