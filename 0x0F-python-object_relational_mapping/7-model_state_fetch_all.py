@@ -11,7 +11,10 @@ engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 session = Session()
-states = session.query(State).all()
+states = session.query(State).order_by(State.id).all()
 
 for state in states:
     print(f"{state.id}: {state.name}")
+
+if __name__ == "__main__":
+    pass
