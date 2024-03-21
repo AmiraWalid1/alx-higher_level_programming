@@ -17,7 +17,6 @@ class State(Base):
     Represents a state in the states table.
     """
     __tablename__ = "states"
-    from relationship_city import City
     id = Column(Integer, autoincrement=True, unique=True,
                 nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)

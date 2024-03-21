@@ -5,13 +5,13 @@ from the database hbtn_0e_100_usa """
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from relationship_state import State
 from relationship_city import Base, City
+from relationship_state import State
 
 
 if __name__ == "__main__":
     engine = create_engine(
-        f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
+        f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}",
         pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Base.metadata.bind = engine
