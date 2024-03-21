@@ -13,10 +13,10 @@ Base = declarative_base()
 
 
 class State(Base):
-    from relationship_city import City
     """
     Represents a state in the states table.
     """
+    from relationship_city import City
     __tablename__ = "states"
     id = Column(Integer, autoincrement=True, unique=True,
                 nullable=False, primary_key=True)
