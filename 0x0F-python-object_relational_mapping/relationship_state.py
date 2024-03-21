@@ -8,10 +8,12 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
+
 Base = declarative_base()
 
 
 class State(Base):
+    from relationship_city import City
     """
     Represents a state in the states table.
     """
@@ -19,10 +21,6 @@ class State(Base):
     id = Column(Integer, autoincrement=True, unique=True,
                 nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-
-    @property
-    def cities(self):
-        from relationship_city import City
-        return relationship("City",
-                            backref="state",
-                            cascade="all, delete, save-update")
+    cities = relationship("City",
+                          backref="state",
+                          cascade="all, delete, save-update")
