@@ -9,7 +9,7 @@ request.get(url, (err, res, body) => {
     let cnt = 0;
     const films = JSON.parse(body).results;
     for (const film of films) {
-      if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+      if (film.characters.includes(url.slice(0, -5) + 'people/18/')) {
         cnt++;
       }
     }
