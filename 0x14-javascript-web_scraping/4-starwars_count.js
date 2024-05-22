@@ -9,7 +9,7 @@ request.get(url, (err, res, body) => {
     let cnt = 0;
     const films = JSON.parse(body).results;
     for (const film of films) {
-      cnt += (film.characters.find(character => character.endsWith('/18/')))? 1:0;
+      cnt += (film.characters.find(character => character.endsWith('/18/'))) ? 1 : 0;
     }
     console.log(cnt);
   }
